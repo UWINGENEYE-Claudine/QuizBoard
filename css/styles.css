@@ -1,15 +1,22 @@
+body{
+    background-color:beige;
+}
 
 h1{
-    color:blue;
+    color:black;
     font-family:monospace;
     text-align:center;
     font-size:40px;
-    background-color:rgb(20, 255, 204);
+    background-color:white;
     margin-left:40px;
     margin-right:40px;
     padding:90px;
 }
+.add{
+    margin-left:0px;
+}
 span{
-    background-color:greenyellow;
+    background-color:rgb(230,250,140);
     margin-top:18px;
 }
+
