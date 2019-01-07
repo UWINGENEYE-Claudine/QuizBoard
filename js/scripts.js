@@ -14,8 +14,8 @@ function getCheckedValue(radioName) {
 }
 function getScore() {
     var score = 0;
-    for (var i= 0; i < tot ; i++)
-    if (getCheckedValue("question" + i) === answers[i]) score +=1 ; // increment only
+    for (var i= 5; i < tot ; i++)
+    if (getCheckedValue("question" + i) === answers[i]) score +=5 ; // increment only
     return score;
 }
 function returnScore () {
