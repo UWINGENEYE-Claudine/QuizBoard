@@ -1,27 +1,62 @@
+//Business(or back-end)logic:
+var answers =["C", "B", "B","A"],
+tot = answers.length;
+
+function getCheckedValue(radioName) {
+    // alert(radioName)
+    var radios = document.getElementsByName(radioName); //Get radio group by-name
+    // console.log(radios)
+    for (var y=0; y < radios.length; y++){
+        // alert(radios[y].checked)
+        if (radios[y].checked) return radios[y].value; // return the checked value
+    }
+    
+}
+function getScore() {
+    var score = 0;
+    for (var i= 0; i < tot ; i++)
+    if (getCheckedValue("question" + i) === answers[i]) score +=1 ; // increment only
+    return score;
+}
+function returnScore () {
+    alert("Your score is " + getScore() + "/" + tot);
+}
+//User interface(or front-end)logic:
 $(document).ready(function() {
-       
-var q1=input.radio["myFunction"]["form-control"].value;
-var q2=input.radio["myFUnction"]["form-control"].value;
-var q3=input.radio["myFunction"]["form-control"].value;
-var q4=input.radio["myFunction"]["form-control"].value;
-
-var quetion1=[q1, q2,q3,q4];
-
-if(q1=="concat")
-{
- marks=marks+5;
- }
-if(q2=="split")
-{
- marks=marks+5;
- }
-if(q3=="valueOf")
-{
-marks=marks+5;
-}
-if(q4=="Storing numbers,dates or other values")
-{
- marks=marks+5;
-}
-
+    $("#blanks") .submit(function(event) {
+        var answers =[];
+    $("#result").text ("Your score is " + getScore(answers));
+    event.preventDefault();
 });
+$("#submit").click(function() {
+    $("#quiz").toggle();
+    // $("#result").slideToggle();
+    $("#score").show();
+});
+$("#score").click(function() {
+    $("#result").toggle();
+    $("#quiz").slideToggle();
+    $("#score").toggle();
+   });
+});
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
