@@ -20,4 +20,5 @@ span{
 #score{
     width:20px;
     padding:5px;
+    display:none;
 }
