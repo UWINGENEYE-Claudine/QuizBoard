@@ -14,7 +14,7 @@ function getCheckedValue(radioName) {
 }
 function getScore() {
     var score = 0;
-    for (var i= 5; i < tot ; i++)
+    for (var i= 0; i < tot ; i++)
     if (getCheckedValue("question" + i) === answers[i]) score +=5 ; // increment only
     return score;
 }
@@ -23,14 +23,14 @@ function returnScore () {
 }
 //User interface(or front-end)logic:
 $(document).ready(function() {
-    $("#blanks") .submit(function(event) {
+    $("#blanks form") .submit(function(event) {
         var answers =[];
     $("#result").text ("Your score is " + getScore(answers));
     event.preventDefault();
 });
 $("#submit").click(function() {
     $("#quiz").toggle();
-    // $("#result").slideToggle();
+    //$("#result").slideToggle();
     $("#score").show();
 });
 $("#score").click(function() {
